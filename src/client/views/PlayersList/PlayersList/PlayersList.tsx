@@ -6,7 +6,7 @@ import PlayerCard from "./PlayerCard/PlayerCard";
 const PlayersList: React.FC<TPlayersList> = ({ list }: TPlayersList) => {
   return (
     <>
-      <div className="playersList-container">
+      <div className="players-list-container">
         {list.map((player) => {
           return <PlayerCard key={`player-card-${player.id}`} {...player} />;
         })}

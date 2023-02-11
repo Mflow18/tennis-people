@@ -7,52 +7,51 @@ import Typography from "@mui/material/Typography";
 import "./PlayerCard.scss";
 import { TPlayer } from "./types";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
 const PlayerCard = ({
   firstname,
   lastname,
   shortname,
   sex,
-  country,
+  picture,
   data,
 }: TPlayer) => {
   const { points, height, weight, age } = data;
-  const { picture, code } = country;
+
+  const formatHeight = (height: number): string => {
+    return (height / 100).toString().replace(".", "m");
+  };
 
   return (
-    <Card className={"playerCard"} sx={{ minWidth: 275 }}>
+    <Card
+      data-testId="player-card"
+      className={"player-card"}
+      sx={{ minWidth: 275 }}
+    >
       <CardContent>
         <CardMedia
-          className={"playerCard-image"}
+          data-testId={"player-card-image"}
+          className={"player-card-image"}
           component="img"
           height="140"
           image={picture}
-          alt={`${code}'s flag`}
+          alt={`${firstname} ${lastname}'s avatar picture`}
         />
         <Typography variant="h5" color="text.secondary" gutterBottom>
           {firstname} {shortname} {lastname}
         </Typography>
         <Typography variant="body2">Gender: {sex}</Typography>
-
-        <Typography variant="h5" component="div"></Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           Rank: {data.rank}
         </Typography>
-        <div className={"playerCard-stats"}>
+        <div className={"player-card-stats"}>
           <Typography variant="h5" component="div">
             Stats
           </Typography>
           <Typography variant="body2">Points: {points}</Typography>
-          <Typography variant="body2">Height: {height}</Typography>
-          <Typography variant="body2">Weight: {weight}</Typography>
+          <Typography variant="body2">
+            Height: {formatHeight(height)}
+          </Typography>
+          <Typography variant="body2">Weight: {weight / 1000} kg</Typography>
           <Typography variant="body2">Age: {age} years old</Typography>
         </div>
       </CardContent>

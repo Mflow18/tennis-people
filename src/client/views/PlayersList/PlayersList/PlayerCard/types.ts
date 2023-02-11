@@ -4,8 +4,9 @@ export type TPlayer = {
   lastname: string;
   shortname: string;
   sex: string;
-  country: TPlayerCountry;
+  picture: string;
   data: TPlayerData;
+  country: TPlayerCountry;
 };
 
 type TPlayerData = {
