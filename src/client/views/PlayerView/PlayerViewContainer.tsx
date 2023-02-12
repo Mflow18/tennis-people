@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CircularProgress from "@mui/material/CircularProgress";
-import PlayerCard from "../PlayersList/PlayersList/PlayerCard/PlayerCard";
-import { TPlayer } from "../PlayersList/PlayersList/PlayerCard/types";
+import PlayerCard from "../shared_components/PlayerCard/PlayerCard";
 import axios from "axios";
+import { TPlayer } from "../shared_components/PlayerCard/types";
 
 const PlayerViewContainer = () => {
   const [data, setData] = useState<TPlayer | undefined>(undefined);

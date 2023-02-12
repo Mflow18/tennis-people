@@ -2,7 +2,7 @@ import React from "react";
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import PlayerCard from "./PlayerCard";
-import mockPlayers from "../mocks";
+import mockPlayers from "../../PlayersList/PlayersList/mocks";
 
 describe("PlayerCard", () => {
   const wrapper = render(<PlayerCard {...mockPlayers[0]} />);

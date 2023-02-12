@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import PlayerCard from "../../shared_components/PlayerCard/PlayerCard";
 import "./PlayersList.scss";
 import { TPlayersList } from "./types";
-import PlayerCard from "./PlayerCard/PlayerCard";
 
 const PlayersList: React.FC<TPlayersList> = ({ list }: TPlayersList) => {
   return (
