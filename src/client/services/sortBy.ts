@@ -1,7 +1,7 @@
 import { TDataPlayers } from "../../server/data/fixtures/types";
 import { TPlayer } from "../views/PlayersList/PlayersList/PlayerCard/types";
 
-const SortBy = (
+const sortBy = (
   data: TDataPlayers["players"],
   key: keyof TPlayer
 ): TDataPlayers["players"] => {
@@ -12,4 +12,4 @@ const SortBy = (
   return sortedArray;
 };
 
-export default SortBy;
+export default sortBy;
