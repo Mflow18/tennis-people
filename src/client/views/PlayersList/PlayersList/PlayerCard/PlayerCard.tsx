@@ -23,13 +23,13 @@ const PlayerCard = ({
 
   return (
     <Card
-      data-testId="player-card"
+      data-testid="player-card"
       className={"player-card"}
       sx={{ minWidth: 275 }}
     >
       <CardContent>
         <CardMedia
-          data-testId={"player-card-image"}
+          data-testid={"player-card-image"}
           className={"player-card-image"}
           component="img"
           height="140"
