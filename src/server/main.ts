@@ -9,5 +9,5 @@ ViteExpress.listen(app, 3000, () =>
 );
 
 app.get("/players", (_, res) => {
-  res.send(res.json({ data: headToHead }));
+  res.send(res.json({ data: headToHead.players }));
 });

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import PlayersList from "./PlayersList/PlayersList";
+import sortBy from "../../services/sortBy";
 
 const ExerciseListContainer = () => {
   const [data, setData] = useState([]);
@@ -8,13 +9,12 @@ const ExerciseListContainer = () => {
   useEffect(() => {
     fetch("/players")
       .then((res) => res.json())
-      .then((data) => setData(data.data.players));
+      .then((data) => setData(data.data));
   }, []);
-  console.log(data);
   return (
     <>
       {data ? (
-        <PlayersList list={data} />
+        <PlayersList list={sortBy(data, "id")} />
       ) : (
         <div className="circular-progress">
           <CircularProgress />
