@@ -2,7 +2,7 @@ export type TDataPlayers = {
   players: TPlayer[];
 };
 
-type TPlayer = {
+export type TPlayer = {
   id: number;
   firstname: string;
   lastname: string;
