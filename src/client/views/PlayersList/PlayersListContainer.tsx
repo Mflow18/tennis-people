@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import PlayersList from "./PlayersList/PlayersList";
 import sortBy from "../../services/sortBy";
+import axios from "axios";
 
-const ExerciseListContainer = () => {
+const PlayersListContainer = () => {
   const [data, setData] = useState([]);
+  console.log(data);
 
   useEffect(() => {
-    fetch("/players")
-      .then((res) => res.json())
-      .then((data) => setData(data.data));
+    axios.get("/players").then((response) => setData(response.data));
   }, []);
+
   return (
     <>
       {data ? (
@@ -24,4 +25,4 @@ const ExerciseListContainer = () => {
   );
 };
 
-export default ExerciseListContainer;
+export default PlayersListContainer;
