@@ -1,4 +1,4 @@
-import { TDataPlayers } from "../../server/data/fixtures/types";
+import { TDataPlayers } from "../../server/data/types";
 import { TPlayer } from "../views/shared_components/PlayerCard/types";
 
 const sortBy = (

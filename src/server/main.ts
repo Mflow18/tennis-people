@@ -1,7 +1,7 @@
 import express from "express";
 import ViteExpress from "vite-express";
 import callRemoteApi from "./services/callRemoteApi";
-import { TPlayer } from "./data/fixtures/types";
+import { TPlayer } from "./data/types";
 
 const app = express();
 

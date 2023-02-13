@@ -1,4 +1,4 @@
-import { TPlayer } from "./PlayerCard/types";
+import { TPlayer } from "../../shared_components/PlayerCard/types";
 
 export type TPlayersList = {
   list: TPlayer[];
